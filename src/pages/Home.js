@@ -18,8 +18,24 @@ import tv from "../images/tv.jpg"
 import Headphones from "../images/headphone.jpg"
 import speaker from "../images/speaker.jpg"
 import watch from "../images/watch.jpg"
+import brand1 from "../images/brand-01.png"
+import brand2 from "../images/brand-02.png"
+import brand3 from "../images/brand-03.png"
+import brand4 from "../images/brand-04.png"
+import brand5 from "../images/brand-05.png"
+import brand6 from "../images/brand-06.png"
+import brand7 from "../images/brand-07.png"
+import brand8 from "../images/brand-08.png"
+import blog1 from "../images/blog-1.jpg";
+import blog2 from "../images/blog2.png";
+import blog3 from "../images/blog3.png";
+import blog4 from "../images/blog4.png";
+
+
 
 import {Link} from 'react-router-dom'
+import Marquee from 'react-fast-marquee'
+import BlogCard from '../components/BlogCard'
 
 const Home = () => {
   return (
@@ -196,6 +212,115 @@ const Home = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className='marquee-wrapper py-5'>
+        <div className='container-xxl'>
+          <div className='row'>
+            <div className='col-12'>
+              <div className='marquee-inner-wrapper card-wrapper'>
+                <Marquee  className='d-flex '>
+                  <div className='mx-4 w-25'>  
+                  {/* mx -> left or right amd width is 25 */}
+                    <img src={brand1} alt='brand'/>
+                  </div>
+                  <div className='mx-4 w-25'>  
+                  {/* mx -> left or right amd width is 25 */}
+                    <img src={brand2} alt='brand'/>
+                  </div>
+                  <div className='mx-4 w-25'>  
+                  {/* mx -> left or right amd width is 25 */}
+                    <img src={brand3} alt='brand'/>
+                  </div>
+                  <div className='mx-4 w-25'>  
+                  {/* mx -> left or right amd width is 25 */}
+                    <img src={brand4} alt='brand'/>
+                  </div>
+                  <div className='mx-4 w-25'>  
+                  {/* mx -> left or right amd width is 25 */}
+                    <img src={brand5} alt='brand'/>
+                  </div>
+                  <div className='mx-4 w-25'>  
+                  {/* mx -> left or right amd width is 25 */}
+                    <img src={brand6} alt='brand'/>
+                  </div>
+                  <div className='mx-4 w-25'>  
+                  {/* mx -> left or right amd width is 25 */}
+                    <img src={brand7} alt='brand'/>
+                  </div>
+                  <div className='mx-4 w-25'>  
+                  {/* mx -> left or right amd width is 25 */}
+                    <img src={brand8} alt='brand'/>
+                  </div>
+                </Marquee>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='blog-wrapper marquee-wrapper py-5'>
+        <div className='container-xxl'>
+          <div className='row'>
+            <div className='col-12'>
+              <h3 className='section-heading'>Our Latest Updates</h3>
+            </div>
+            <div className='col-3'>
+            <div className='blog-card'>
+                <div className='card-image'>
+                    <img src={blog1} className='img-fluid' alt='blog-image' />
+                </div>
+                <div className='blog-content'>
+                    <p className='date'>22 Jan, 2024</p>
+                    <h5 className='title'>A beautiful Moring with a new Breeze.</h5>
+                    <p className='desc'>Teams will have to take an online assessment round consisting of 20 questions. The earlier you start, the better. All team members will attempt the online assessment individually. </p>
+                    <Link to="/" className='button'> Read More</Link>
+                </div>
+            </div>
+            </div>
+            <div className='col-3'>
+                <div className='blog-card'>
+                    <div className='card-image'>
+                        <img src={blog2} className='img-fluid' alt='blog-image' />
+                    </div>
+                    <div className='blog-content'>
+                        <p className='date'>22 Jan, 2024</p>
+                        <h5 className='title'>A beautiful Moring with a new Breeze.</h5>
+                        <p className='desc'>Teams will have to take an online assessment round consisting of 20 questions. The earlier you start, the better. All team members will attempt the online assessment individually. </p>
+                        <Link to="/" className='button'> Read More</Link>
+                    </div>
+                </div>
+            </div>
+            <div className='col-3'>
+                <div className='blog-card'>
+                    <div className='card-image'>
+                        <img src={blog3} className='img-fluid' alt='blog-image' />
+                    </div>
+                    <div className='blog-content'>
+                        <p className='date'>22 Jan, 2024</p>
+                        <h5 className='title'>A beautiful Moring with a new Breeze.</h5>
+                        <p className='desc'>Teams will have to take an online assessment round consisting of 20 questions. The earlier you start, the better. All team members will attempt the online assessment individually. </p>
+                        <Link to="/" className='button'> Read More</Link>
+                    </div>
+                </div>
+            </div>
+            <div className='col-3'>
+                <div className='blog-card'>
+                    <div className='card-image'>
+                        <img src={blog4} className='img-fluid' alt='blog-image' />
+                    </div>
+                    <div className='blog-content'>
+                        <p className='date'>22 Jan, 2024</p>
+                        <h5 className='title'>A beautiful Moring with a new Breeze.</h5>
+                        <p className='desc'>Teams will have to take an online assessment round consisting of 20 questions. The earlier you start, the better. All team members will attempt the online assessment individually. </p>
+                        <Link to="/" className='button'> Read More</Link>
+                    </div>
+                </div>
+            </div>
+            {/* <BlogCard/>
+            <BlogCard/>
+            <BlogCard/>
+            <BlogCard/> */}
           </div>
         </div>
       </section>
