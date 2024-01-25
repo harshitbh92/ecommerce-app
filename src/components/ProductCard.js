@@ -28,9 +28,9 @@ const ProductCard = () => {
                 </div>
                 <div className='prod-details'>
                   <h6 className='brand-name'>Titan</h6>
-                  <h5 className='product-title'>
+                  <h6 className='product-title'>
                     Kids watch bulk 10 items pack multi colored
-                  </h5>
+                  </h6>
                   <ReactStars
                     count={5}
                     size={24}

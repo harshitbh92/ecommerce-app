@@ -367,4 +367,24 @@ footer:not(:first-child){
   height: 25px;
   width: 25px;
 }
-/* Product Crad ends */
+/* Product Card ends */
+
+
+/* Special Products start */
+
+.special-products{
+  background-color: var(--color-f5f5f7);
+}
+
+.special-products .section-heading{
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.special-product-card{
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Special Product Ends */
