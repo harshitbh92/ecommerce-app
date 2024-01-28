@@ -387,4 +387,27 @@ footer:not(:first-child){
   border-radius: 10px;
 }
 
+.special-product-card .side-img .img1 img{
+  height: 60px;
+  width: 60px;
+  border: 1px solid var(--color-131921);
+
+}
+.special-product-card .side-img .img2 img{
+  height: 60px;
+  width: 60px;
+  border: 1px solid var(--color-131921);
+
+}
+/* .special-img .side-img>img:last-child{
+  display: none;
+}
+.special-img:hover .side-img > img:nth-child(1)
+{
+  display: none;
+}
+.special-img:hover .side-img > img:last-child
+{
+  display: block;
+} */
 /* Special Product Ends */
