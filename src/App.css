@@ -484,7 +484,16 @@ footer:not(:first-child){
   background-color: white;
   border-radius: 10px;
 }
-
+.totalproducts{
+  color: var(--color-777777);
+}
+.grid img{
+  height: 30px;
+  width: 30px;
+  background-color: #f2f2f2;
+  padding: 6px;
+  border-radius: 3px;
+}
 
 
 
