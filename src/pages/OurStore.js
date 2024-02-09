@@ -5,11 +5,21 @@ import ProductCard from '../components/ProductCard';
 import { Link } from 'react-router-dom'
 
 import prod1 from "../images/watch.jpg";
-// import prod2 from "../images/prod2.jpg";
-// import prod3 from "../images/prod3.jpg";
-// import prod4 from "../images/prod4.jpg";
-// import prod5 from "../images/prod5.jpg";
-// import prod6 from "../images/prod6.jpg";
+import prod2 from "../images/prod2.jpg";
+import prod3 from "../images/prod3.jpg";
+import prod4 from "../images/prod4.jpg";
+import prod5 from "../images/prod5.jpg";
+import prod6 from "../images/prod6.jpg";
+import prod7 from "../images/prod7.jpg";
+import prod8 from "../images/prod8.jpg";
+import prod9 from "../images/prod9.jpg";
+import prod10 from "../images/prod10.jpg";
+import prod11 from "../images/prod11.jpg";
+import prod12 from "../images/prod12.jpg";
+import prod13 from "../images/prod13.jpg";
+import prod14 from "../images/prod14.jpg";
+import prod15 from "../images/prod15.jpg";
+import prod16 from "../images/prod16.jpg";
 import cart from "../images/cart.png";
 import compare from '../images/compare.png'
 import view from "../images/view.png"
@@ -211,22 +221,24 @@ const OurStore = () => {
                   <div className='d-flex align-items-center gap-10'>
                     <p className='totalproducts mb-0'><b>120 products</b></p>
                     <div className='d-flex align-items-center gap-10 grid'>
-                      <img src={gr1}
-                        // onClick={()=>{
-                        //   setGrid(5);
-                        // }}
+                      <img 
+                      src={gr1}
+                        
                         className='d-block img-fluid' alt='grid' />
-                      <img src={gr2}
+                      <img 
+                      src={gr2}
                         // onClick={()=>{
                         //   setGrid(3);
                         // }}
                         className='d-block img-fluid' alt='grid' />
-                      <img src={gr3}
+                      <img 
+                      src={gr3}
                         // onClick={()=>{
                         //   setGrid(2);
                         // }}
                         className='d-block img-fluid' alt='grid' />
-                      <img src={gr4}
+                      <img 
+                       src={gr4}
                         // onClick={()=>{
                         //   setGrid(1);
                         // }}
@@ -288,7 +300,7 @@ const OurStore = () => {
                           </Link>
                         </div>
                         <div className='prod-image'>
-                          <img src={prod1} className='prod-img img-fluid' alt='product-image' />
+                          <img src={prod2} className='prod-img img-fluid' alt='product-image' />
                           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
                         </div>
                         <div className='prod-details'>
@@ -328,7 +340,7 @@ const OurStore = () => {
                           </Link>
                         </div>
                         <div className='prod-image'>
-                          <img src={prod1} className='prod-img img-fluid' alt='product-image' />
+                          <img src={prod3} className='prod-img img-fluid' alt='product-image' />
                           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
                         </div>
                         <div className='prod-details'>
@@ -368,7 +380,7 @@ const OurStore = () => {
                           </Link>
                         </div>
                         <div className='prod-image'>
-                          <img src={prod1} className='prod-img img-fluid' alt='product-image' />
+                          <img src={prod4} className='prod-img img-fluid' alt='product-image' />
                           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
                         </div>
                         <div className='prod-details'>
@@ -410,7 +422,7 @@ const OurStore = () => {
                           </Link>
                         </div>
                         <div className='prod-image'>
-                          <img src={prod1} className='prod-img img-fluid' alt='product-image' />
+                          <img src={prod5} className='prod-img img-fluid' alt='product-image' />
                           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
                         </div>
                         <div className='prod-details'>
@@ -450,7 +462,7 @@ const OurStore = () => {
                           </Link>
                         </div>
                         <div className='prod-image'>
-                          <img src={prod1} className='prod-img img-fluid' alt='product-image' />
+                          <img src={prod6} className='prod-img img-fluid' alt='product-image' />
                           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
                         </div>
                         <div className='prod-details'>
@@ -490,7 +502,7 @@ const OurStore = () => {
                           </Link>
                         </div>
                         <div className='prod-image'>
-                          <img src={prod1} className='prod-img img-fluid' alt='product-image' />
+                          <img src={prod7} className='prod-img img-fluid' alt='product-image' />
                           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
                         </div>
                         <div className='prod-details'>
@@ -530,7 +542,7 @@ const OurStore = () => {
                           </Link>
                         </div>
                         <div className='prod-image'>
-                          <img src={prod1} className='prod-img img-fluid' alt='product-image' />
+                          <img src={prod8} className='prod-img img-fluid' alt='product-image' />
                           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
                         </div>
                         <div className='prod-details'>
@@ -572,7 +584,7 @@ const OurStore = () => {
                           </Link>
                         </div>
                         <div className='prod-image'>
-                          <img src={prod1} className='prod-img img-fluid' alt='product-image' />
+                          <img src={prod9} className='prod-img img-fluid' alt='product-image' />
                           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
                         </div>
                         <div className='prod-details'>
@@ -612,7 +624,7 @@ const OurStore = () => {
                           </Link>
                         </div>
                         <div className='prod-image'>
-                          <img src={prod1} className='prod-img img-fluid' alt='product-image' />
+                          <img src={prod10} className='prod-img img-fluid' alt='product-image' />
                           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
                         </div>
                         <div className='prod-details'>
@@ -652,7 +664,7 @@ const OurStore = () => {
                           </Link>
                         </div>
                         <div className='prod-image'>
-                          <img src={prod1} className='prod-img img-fluid' alt='product-image' />
+                          <img src={prod11} className='prod-img img-fluid' alt='product-image' />
                           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
                         </div>
                         <div className='prod-details'>
@@ -692,7 +704,7 @@ const OurStore = () => {
                           </Link>
                         </div>
                         <div className='prod-image'>
-                          <img src={prod1} className='prod-img img-fluid' alt='product-image' />
+                          <img src={prod12} className='prod-img img-fluid' alt='product-image' />
                           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
                         </div>
                         <div className='prod-details'>
@@ -734,7 +746,7 @@ const OurStore = () => {
                           </Link>
                         </div>
                         <div className='prod-image'>
-                          <img src={prod1} className='prod-img img-fluid' alt='product-image' />
+                          <img src={prod13} className='prod-img img-fluid' alt='product-image' />
                           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
                         </div>
                         <div className='prod-details'>
@@ -774,7 +786,7 @@ const OurStore = () => {
                           </Link>
                         </div>
                         <div className='prod-image'>
-                          <img src={prod1} className='prod-img img-fluid' alt='product-image' />
+                          <img src={prod14} className='prod-img img-fluid' alt='product-image' />
                           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
                         </div>
                         <div className='prod-details'>
@@ -814,7 +826,7 @@ const OurStore = () => {
                           </Link>
                         </div>
                         <div className='prod-image'>
-                          <img src={prod1} className='prod-img img-fluid' alt='product-image' />
+                          <img src={prod15} className='prod-img img-fluid' alt='product-image' />
                           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
                         </div>
                         <div className='prod-details'>
@@ -854,7 +866,7 @@ const OurStore = () => {
                           </Link>
                         </div>
                         <div className='prod-image'>
-                          <img src={prod1} className='prod-img img-fluid' alt='product-image' />
+                          <img src={prod16} className='prod-img img-fluid' alt='product-image' />
                           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
                         </div>
                         <div className='prod-details'>
@@ -887,8 +899,19 @@ const OurStore = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                 </div>
+              </div>
+              <div className=' d-flex  justify-content-center'>
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </nav>
               </div>
             </div>
           </div>
