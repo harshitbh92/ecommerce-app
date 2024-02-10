@@ -46,25 +46,33 @@ const Header = () => {
             <div className='col-5'>
               <div className='header-upper-links d-flex align-items-center justify-content-between'>
                 <div>
-                  <Link className='d-flex align-items-center text-white gap-10'>
+                  <Link 
+                  to='/compare-product'
+                  className='d-flex align-items-center text-white gap-10'>
                     <img src={img1} alt='compare products' style={{ filter: 'brightness(0) invert(1)' }} />
                     <p className='mb-0'>Compare <br /> Products</p>
                   </Link>
                 </div>
                 <div>
-                  <Link className='d-flex align-items-center text-white gap-10'>
+                  <Link 
+                  to='/wishlist'
+                  className='d-flex align-items-center text-white gap-10'>
                     <img src={img2} alt='wishlist' style={{ filter: 'brightness(0) invert(1)' }} />
                     <p className='mb-0'>Add to  <br /> Wishlist</p>
                   </Link>
                 </div>
                 <div>
-                  <Link className='d-flex align-items-center text-white gap-10'>
+                  <Link
+                  to='/login'
+                   className='d-flex align-items-center text-white gap-10'>
                     <img src={img3} alt='log in' style={{ filter: 'brightness(0) invert(1)' }} />
                     <p className='mb-0'>Log in <br /> My Account</p>
                   </Link>
                 </div>
                 <div>
-                  <Link className='d-flex align-items-center text-white gap-10'>
+                  <Link
+                  to='/cart'
+                   className='d-flex align-items-center text-white gap-10'>
                     <img src={img4} alt='cart' style={{ filter: 'brightness(0) invert(1)' }} />
                     <p className='mb-0'>$400</p>
                   </Link>

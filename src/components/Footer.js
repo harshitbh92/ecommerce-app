@@ -57,7 +57,7 @@ const Footer = () => {
                 <Link className='text-white py-2 '>Privacy Policy</Link>
                 <Link className='text-white py-2 '>Refund Policy</Link>
                 <Link className='text-white py-2 '>Terms of Service</Link>
-                <Link className='text-white py-2 '>Blogs</Link>
+                <Link to='/blogs' className='text-white py-2 '>Blogs</Link>
                 <Link className='text-white py-2 '>Shiiping Policy</Link>
               </div>
             </div>
@@ -67,7 +67,7 @@ const Footer = () => {
                 <Link className='text-white py-2 '>Search</Link>
                 <Link className='text-white py-2 '>About Us</Link>
                 <Link className='text-white py-2 '>FAQ</Link>
-                <Link className='text-white py-2 '>Conatct</Link>
+                <Link to='/contact' className='text-white py-2 '>Contact</Link>
               </div>
             </div>
             <div className='col-2'>

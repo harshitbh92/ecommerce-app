@@ -30,6 +30,7 @@ import gr1 from "../images/default_items.png"
 import gr4 from "../images/3items_horizontal.png"
 import gr2 from "../images/bars.png"
 import gr3 from "../images/2items.png"
+import Color from '../components/Color';
 
 const OurStore = () => {
   // const {grid, setGrid} = useState(4);
@@ -85,19 +86,7 @@ const OurStore = () => {
 
                   <h5 className='sub-title'>Colors</h5>
                   <div>
-                    <ul className='colors ps-0'>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-
-                    </ul>
+                    <Color/>
                   </div>
                   <h5 className='sub-title'>Size</h5>
                   <div>
