@@ -9,6 +9,10 @@ import OurStore from './pages/OurStore';
 import Blog from './pages/Blog';
 import CompareProduct from './pages/CompareProduct';
 import Wishlist from './pages/Wishlist';
+import Login from './pages/Login';
+import ForgotPassword from './pages/ForgotPassword';
+import SignUp from './pages/SignUp';
+import ResetPassword from './pages/ResetPassword';
 //whatever we pass in the <Route> will reflect in <Outlet> of Layout.js
 function App() {
   return (
@@ -23,6 +27,13 @@ function App() {
           <Route path="blogs" element={<Blog/>}/>
           <Route path="compare-product" element={<CompareProduct/>}/>
           <Route path="wishlist" element={<Wishlist/>}/>
+          <Route path="login" element={<Login/>}/>
+          <Route path="forgot-password" element={<ForgotPassword/>}/>
+          <Route path="signup" element={<SignUp/>}/>
+          <Route path="reset-password" element={<ResetPassword/>}/>
+
+
+
 
 
 

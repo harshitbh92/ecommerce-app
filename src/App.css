@@ -563,16 +563,31 @@ footer:not(:first-child){
   padding: 20px 15px;
   border-radius: 10px;
 }
+.compare-product-image img{
+  height: 280px;
+  width: 100%;
+}
 
-.compare-product-card .cross{
-  top: 15px;
-  right: 15px;
+/* .compare-product-card .cross{
+  z-index: 1;
+  top: 0;
+  right: 0;
   width: 25px;
   padding: 3px;
   cursor: pointer;
 
-}
+} */
 
+.cross {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 25px;
+  /* height: 1px; */
+  padding: 3px;
+  cursor: pointer;
+  z-index: 1; /* Ensure the cross is above other elements */
+}
 .compare-product-details h5.title{
   font-size: 15px;
   line-height: 22px;
@@ -594,3 +609,45 @@ footer:not(:first-child){
 
 
 /* Compare Products page ends */
+
+/* Login card starts */
+.login-wrapper{
+  background-color: var(--color-f5f5f7);
+}
+.login-card{
+  background-color: white;
+  padding: 20px;
+  width: 500px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+.login-card h3{
+  font-size: 22px;
+  font-weight: 500;
+
+}
+.login-card .form-control{
+  border-color: transparent;
+  height: 50px;
+  background-color: var(--color-f5f5f7);
+  color: var(--color-3b4149);
+  border-radius: 10px;
+  font-size: 16px;
+}
+.login-card a{
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-1c1c1b);
+}
+.login-card .signup{
+  background-color:var(--color-febd69);
+  color: var(--color-131921);
+}
+.login-card .signup:hover{
+  background-color:var(--color-131921);
+  color: white;
+}
+.login-card p{
+  color: var(--color-777777);
+}
+/* Login Card ends */

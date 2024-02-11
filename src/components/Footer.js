@@ -73,10 +73,10 @@ const Footer = () => {
             <div className='col-2'>
               <h3 className='text-white mb-4'>Quick Links</h3>
               <div className='footer-links d-flex flex-column'>
-                <Link className='text-white py-2 '>Laptops</Link>
-                <Link className='text-white py-2 '>SmartWatches</Link>
-                <Link className='text-white py-2 '>Headphones</Link>
-                <Link className='text-white py-2 '>Tablets</Link>
+                <Link to='store' className='text-white py-2 '>Laptops</Link>
+                <Link to='store' className='text-white py-2 '>SmartWatches</Link>
+                <Link to='store' className='text-white py-2 '>Headphones</Link>
+                <Link to='store' className='text-white py-2 '>Tablets</Link>
               </div>
             </div>
           </div>
