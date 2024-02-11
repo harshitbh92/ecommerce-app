@@ -651,3 +651,37 @@ footer:not(:first-child){
   color: var(--color-777777);
 }
 /* Login Card ends */
+
+/* Single Blog page starts  */
+
+.single-blog-card h3{
+  font-size: 24px;
+font-weight: 500;
+color: var(--color-1c1c1b);  
+}
+.single-blog-card p{
+  color: var(--color-777777);
+  font-size: 14px;
+}
+.single-blog-card img{
+  height: 550px;
+}
+.single-blog-card a{
+  color: var(--color-777777);
+  font-size: 20px;
+}
+.comment-section{
+  background-color: white;
+  padding: 30px 20px;
+  border-radius: 10px;
+  gap: 15px;
+}
+.comment-section form .form-control{
+  background-color: var(--color-f5f5f7);
+  border-radius: 10px;
+  border-color: transparent;
+  color: #777777;
+}
+
+
+/* Single Blog page ends */
