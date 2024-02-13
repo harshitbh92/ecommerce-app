@@ -19,6 +19,8 @@ import ShippingPolicy from './pages/ShippingPolicy';
 import RefundPolicy from './pages/RefundPolicy';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import Shipping from './pages/Shipping';
 //whatever we pass in the <Route> will reflect in <Outlet> of Layout.js
 function App() {
   return (
@@ -43,6 +45,8 @@ function App() {
           <Route path="shipping-policy" element={<ShippingPolicy/>}/>
           <Route path="terms-conditions" element={<TermsAndConditions/>}/>
           <Route path="cart" element={<Cart/>}/>
+          <Route path="checkout" element={<Checkout/>}/>
+          <Route path="shipping" element={<Shipping/>}/>
 
 
 
