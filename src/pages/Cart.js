@@ -40,6 +40,7 @@ const Cart = () => {
                                         type='number' 
                                         name='' 
                                         id=''
+                                        value='1'
                                         min={1}
                                         max={10}
                                         />

@@ -246,10 +246,12 @@ const Home = () => {
       <section className='featured-collection py-5'>
         <div className='container-xxl'>
           <div className='row'>
-            <div className='col-12  align-items-center'>
+            <div className='col-12 d-flex align-items-center justify-content-between'>
+              <div>
               <h3 className='section-heading'>Featured Collections</h3>
-              <div className='d-flex align-items-center justify-content-end gap mb-4 '>
-                <Link to='/blogs'>View Store</Link>
+              </div>
+              <div className='d-flex align-items-center gap mb-4 '>
+                <Link to='/store' className='text-dark'>View Store</Link>
                 <IoArrowForward />
               </div>
             </div>

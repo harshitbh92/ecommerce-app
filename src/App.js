@@ -21,6 +21,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Shipping from './pages/Shipping';
+import SingleProduct from './pages/SingleProduct';
 //whatever we pass in the <Route> will reflect in <Outlet> of Layout.js
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
           <Route path="cart" element={<Cart/>}/>
           <Route path="checkout" element={<Checkout/>}/>
           <Route path="shipping" element={<Shipping/>}/>
+          <Route path="product/:id" element={<SingleProduct/>}/>
 
 
 

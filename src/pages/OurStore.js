@@ -271,7 +271,7 @@ const OurStore = () => {
                             <Link>
                               <img src={compare} alt='compare products' />
                             </Link>
-                            <Link>
+                            <Link to='/product/:id'>
                               <img src={view} alt='view product' />
                             </Link>
                             <Link>
@@ -311,7 +311,7 @@ const OurStore = () => {
                             <Link>
                               <img src={compare} alt='compare products' />
                             </Link>
-                            <Link>
+                            <Link to='/main-product'>
                               <img src={view} alt='view product' />
                             </Link>
                             <Link>
@@ -351,7 +351,7 @@ const OurStore = () => {
                             <Link>
                               <img src={compare} alt='compare products' />
                             </Link>
-                            <Link>
+                            <Link to='/main-product'>
                               <img src={view} alt='view product' />
                             </Link>
                             <Link>
@@ -391,7 +391,7 @@ const OurStore = () => {
                             <Link>
                               <img src={compare} alt='compare products' />
                             </Link>
-                            <Link>
+                            <Link to='/main-product'>
                               <img src={view} alt='view product' />
                             </Link>
                             <Link>
@@ -433,7 +433,7 @@ const OurStore = () => {
                             <Link>
                               <img src={compare} alt='compare products' />
                             </Link>
-                            <Link>
+                            <Link to='/main-product'>
                               <img src={view} alt='view product' />
                             </Link>
                             <Link>
@@ -473,7 +473,7 @@ const OurStore = () => {
                             <Link>
                               <img src={compare} alt='compare products' />
                             </Link>
-                            <Link>
+                            <Link to='/main-product'>
                               <img src={view} alt='view product' />
                             </Link>
                             <Link>
@@ -513,7 +513,7 @@ const OurStore = () => {
                             <Link>
                               <img src={compare} alt='compare products' />
                             </Link>
-                            <Link>
+                            <Link to='/main-product'>
                               <img src={view} alt='view product' />
                             </Link>
                             <Link>
@@ -553,7 +553,7 @@ const OurStore = () => {
                             <Link>
                               <img src={compare} alt='compare products' />
                             </Link>
-                            <Link>
+                            <Link to='/main-product'>
                               <img src={view} alt='view product' />
                             </Link>
                             <Link>
@@ -595,7 +595,7 @@ const OurStore = () => {
                             <Link>
                               <img src={compare} alt='compare products' />
                             </Link>
-                            <Link>
+                            <Link to='/main-product'>
                               <img src={view} alt='view product' />
                             </Link>
                             <Link>
@@ -635,7 +635,7 @@ const OurStore = () => {
                             <Link>
                               <img src={compare} alt='compare products' />
                             </Link>
-                            <Link>
+                            <Link to='/main-product'>
                               <img src={view} alt='view product' />
                             </Link>
                             <Link>
@@ -675,7 +675,7 @@ const OurStore = () => {
                             <Link>
                               <img src={compare} alt='compare products' />
                             </Link>
-                            <Link>
+                            <Link to='/main-product'>
                               <img src={view} alt='view product' />
                             </Link>
                             <Link>
@@ -715,7 +715,7 @@ const OurStore = () => {
                             <Link>
                               <img src={compare} alt='compare products' />
                             </Link>
-                            <Link>
+                            <Link to='/main-product'>
                               <img src={view} alt='view product' />
                             </Link>
                             <Link>
@@ -757,7 +757,7 @@ const OurStore = () => {
                             <Link>
                               <img src={compare} alt='compare products' />
                             </Link>
-                            <Link>
+                            <Link to='/main-product'>
                               <img src={view} alt='view product' />
                             </Link>
                             <Link>
@@ -797,7 +797,7 @@ const OurStore = () => {
                             <Link>
                               <img src={compare} alt='compare products' />
                             </Link>
-                            <Link>
+                            <Link to='/main-product'>
                               <img src={view} alt='view product' />
                             </Link>
                             <Link>
@@ -837,7 +837,7 @@ const OurStore = () => {
                             <Link>
                               <img src={compare} alt='compare products' />
                             </Link>
-                            <Link>
+                            <Link to='/main-product'>
                               <img src={view} alt='view product' />
                             </Link>
                             <Link>
@@ -877,7 +877,7 @@ const OurStore = () => {
                             <Link>
                               <img src={compare} alt='compare products' />
                             </Link>
-                            <Link>
+                            <Link to='/main-product'>
                               <img src={view} alt='view product' />
                             </Link>
                             <Link>
