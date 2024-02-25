@@ -91,7 +91,7 @@ const Header = () => {
             <div className='col-12'>
               <div className='menu-bottom d-flex align-items-center gap-30'>
                 <div className=''>
-                  <div class="dropdown">
+                  <div className="dropdown">
                     <button className="btn btn-secondary dropdown-toggle bg-transparent border-0 gap-15 d-flex align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                       <img src={img5} alt='menu'  style={{ filter: 'brightness(0) invert(1)' }}/>
                      <span >Shop Categories</span>

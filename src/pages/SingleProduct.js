@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ReactStars from "react-rating-stars-component";
 import { IoArrowForward } from "react-icons/io5";
 // import ReactImageZoom from 'react-image-zoom';
-import ReactImageMagnify from 'react-image-magnify';
+// import ReactImageMagnify from 'react-image-magnify';
 
 import prod1 from "../images/watch.jpg";
 import prod2 from "../images/prod2.jpg";

@@ -48,78 +48,89 @@ import ProductCard from '../components/ProductCard'
 import ReactStars from "react-rating-stars-component";
 import SpecialProduct from '../components/SpecialProduct'
 import { IoArrowForward } from "react-icons/io5";
-
+import Container from '../components/Container'
+import { services } from '../utils/Data'
 
 const Home = () => {
   return (
     <>
-      <section className='home-wrapper-1 py-3'>
-        <div className='container-xxl'>
-          <div className='row'>
-            <div className='col-6'>
-              <div className='main-banner p-2 position-relative'>
-                <img src={main_banner} className='img-fluid rounded-3' alt='main-banner' />
-                <div className='main-banner-content position-absolute'>
-                  <h3>SUPERCHARGED FOR YOU.</h3>
-                  <h5>Samsung S13+ Pro.</h5>
-                  <p>From $200 or $12/mo.</p>
-                  <Link className='button'>BUY NOW</Link>
+      <Container class1='home-wrapper-1 py-3'>
+        <div className='row'>
+          <div className='col-6'>
+            <div className='main-banner p-2 position-relative'>
+              <img src={main_banner} className='img-fluid rounded-3' alt='main-banner' />
+              <div className='main-banner-content position-absolute'>
+                <h3>SUPERCHARGED FOR YOU.</h3>
+                <h5>Samsung S13+ Pro.</h5>
+                <p>From $200 or $12/mo.</p>
+                <Link className='button'>BUY NOW</Link>
+              </div>
+            </div>
+
+          </div>
+          <div className='col-6'>
+            <div className='d-flex flex-wrap  gap-10justify-content-between align-items-center'>
+              <div className='small-banner position-relative p-3'>
+                <img src={cartbanner01} className='img-fluid rounded-3' alt='cart-banner-1' />
+                <div className='small-banner-content position-absolute'>
+                  <h3>BEST SALE</h3>
+                  <h5>Laptops Max</h5>
+                  <p>From $1699.00 or $45/mo.</p>
+                  {/* <Link className='button'>BUY NOW</Link> */}
                 </div>
               </div>
 
-            </div>
-            <div className='col-6'>
-              <div className='d-flex flex-wrap  gap-10justify-content-between align-items-center'>
-                <div className='small-banner position-relative p-3'>
-                  <img src={cartbanner01} className='img-fluid rounded-3' alt='cart-banner-1' />
-                  <div className='small-banner-content position-absolute'>
-                    <h3>BEST SALE</h3>
-                    <h5>Laptops Max</h5>
-                    <p>From $1699.00 or $45/mo.</p>
-                    {/* <Link className='button'>BUY NOW</Link> */}
-                  </div>
+              <div className='small-banner position-relative p-3'>
+                <img src={cartbanner02} className='img-fluid rounded-3' alt='cart-banner-1' />
+                <div className='small-banner-content position-absolute'>
+                  <h3>20% OFF</h3>
+                  <h5>SmartWatch 7</h5>
+                  <p>From $99.00 or $44.91/mo.<br /><br />for 12 mo.</p>
+                  {/* <Link className='button'>BUY NOW</Link> */}
                 </div>
+              </div>
 
-                <div className='small-banner position-relative p-3'>
-                  <img src={cartbanner02} className='img-fluid rounded-3' alt='cart-banner-1' />
-                  <div className='small-banner-content position-absolute'>
-                    <h3>20% OFF</h3>
-                    <h5>SmartWatch 7</h5>
-                    <p>From $99.00 or $44.91/mo.<br /><br />for 12 mo.</p>
-                    {/* <Link className='button'>BUY NOW</Link> */}
-                  </div>
+              <div className='small-banner position-relative p-3'>
+                <img src={cartbanner03} className='img-fluid rounded-3' alt='cart-banner-1' />
+                <div className='small-banner-content position-absolute'>
+                  <h3>NEW ARRIVAL</h3>
+                  <h5>Buy IPad Air</h5>
+                  <p>From $99.00 or $44.91/mo.<br /><br />for 12 mo.</p>
+                  {/* <Link className='button'>BUY NOW</Link> */}
                 </div>
+              </div>
 
-                <div className='small-banner position-relative p-3'>
-                  <img src={cartbanner03} className='img-fluid rounded-3' alt='cart-banner-1' />
-                  <div className='small-banner-content position-absolute'>
-                    <h3>NEW ARRIVAL</h3>
-                    <h5>Buy IPad Air</h5>
-                    <p>From $99.00 or $44.91/mo.<br /><br />for 12 mo.</p>
-                    {/* <Link className='button'>BUY NOW</Link> */}
-                  </div>
-                </div>
-
-                <div className='small-banner position-relative p-3'>
-                  <img src={cartbanner04} className='img-fluid rounded-3' alt='cart-banner-1' />
-                  <div className='small-banner-content position-absolute'>
-                    <h3>FREE ENGRAVING</h3>
-                    <h5>Boat Headphones</h5>
-                    <p>High-quality playback and<br /><br />Low-latency</p>
-                    {/* <Link className='button'>BUY NOW</Link> */}
-                  </div>
+              <div className='small-banner position-relative p-3'>
+                <img src={cartbanner04} className='img-fluid rounded-3' alt='cart-banner-1' />
+                <div className='small-banner-content position-absolute'>
+                  <h3>FREE ENGRAVING</h3>
+                  <h5>Boat Headphones</h5>
+                  <p>High-quality playback and<br /><br />Low-latency</p>
+                  {/* <Link className='button'>BUY NOW</Link> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <section className='home-wrapper-2 p-5'>
-        <div className='container-xxl'>
-          <div className='row'>
-            <div className='col-12'>
-              <div className='services d-flex align-items-center justify-content-between'>
-                <div className='d-flex align-items-center gap-15'>
+      </Container>
+      <Container class1='home-wrapper-2 p-5'>
+        <div className='row'>
+          <div className='col-12'>
+            <div className='services d-flex align-items-center justify-content-between'>
+              {/* {
+                services.map((i, j) => {
+                  return (
+                    <div className='d-flex align-items-center gap-15' key={j}>
+                      <img src={i.image} alt='services' />
+                      <div >
+                        <h6>{i.title}</h6>
+                        <p className='mb-0'>{i.tagline}</p>
+                      </div>
+                    </div>
+                  );
+                })
+              } */}
+              <div className='d-flex align-items-center gap-15'>
                   <img src={free_delivery} alt='services' />
                   <div >
                     <h6>Free Shipping</h6>
@@ -157,14 +168,12 @@ const Home = () => {
                     <p className='mb-0'>100% Protected Payments</p>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
-      </section>
-      <section className='home-wrapper-3 py-5'>
-        <div className='container-xxl'>
-          <div className='row'>
+      </Container>
+      <Container class1='home-wrapper-3 py-5'>
+      <div className='row'>
             <div className='col-12'>
               <div className='categories d-flex flex-wrap justify-content-between align-items-center'>
                 <div className='d-flex align-items-center gap-10'>
@@ -226,29 +235,12 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      {/* <section className='featured-collection py-5'>
-        <div className='container-xxl'>
-          <div className='row'>
-            <div className='col-12'>
-              <h3 className='section-heading'>Featured Collection</h3>
-            </div>
-            <div className='d-flex'>
-              <ProductCard/>
-              <ProductCard/>
-              <ProductCard/>
-              <ProductCard/>
-              </div>
-          </div>
-        </div>
-      </section> */}
-      <section className='featured-collection py-5'>
-        <div className='container-xxl'>
-          <div className='row'>
+      </Container>
+      <Container class1='featured-collection py-5'>
+      <div className='row'>
             <div className='col-12 d-flex align-items-center justify-content-between'>
               <div>
-              <h3 className='section-heading'>Featured Collections</h3>
+                <h3 className='section-heading'>Featured Collections</h3>
               </div>
               <div className='d-flex align-items-center gap mb-4 '>
                 <Link to='/store' className='text-dark'>View Store</Link>
@@ -275,7 +267,7 @@ const Home = () => {
                   <ReactStars
                     count={5}
                     size={24}
-                    value='3.5'
+                    value={3}
                     edit={false}
                     activeColor="#ffd700"
                   />
@@ -492,12 +484,9 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className='special-products py-5'>
-        <div className='container-xxl'>
-          <div className='row'>
+      </Container>
+      <Container class1='special-products py-5'>
+      <div className='row'>
             <div className='col-12'>
               <h3 className='section-heading'>Special Products</h3>
             </div>
@@ -507,12 +496,9 @@ const Home = () => {
               <SpecialProduct />
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className='marquee-wrapper py-5'>
-        <div className='container-xxl'>
-          <div className='row'>
+      </Container>
+      <Container class1='marquee-wrapper py-5'>
+      <div className='row'>
             <div className='col-12'>
               <div className='marquee-inner-wrapper card-wrapper'>
                 <Marquee className='d-flex '>
@@ -552,11 +538,9 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section className='blog-wrapper marquee-wrapper py-5'>
-        <div className='container-xxl'>
-          <div className='row'>
+      </Container>
+      <Container class1='blog-wrapper marquee-wrapper py-5'>
+      <div className='row'>
             <div className='col-12'>
               <h3 className='section-heading'>Our Latest Updates</h3>
             </div>
@@ -617,8 +601,24 @@ const Home = () => {
             <BlogCard/>
             <BlogCard/> */}
           </div>
+      </Container>
+      {/* <section className='featured-collection py-5'>
+        <div className='container-xxl'>
+          <div className='row'>
+            <div className='col-12'>
+              <h3 className='section-heading'>Featured Collection</h3>
+            </div>
+            <div className='d-flex'>
+              <ProductCard/>
+              <ProductCard/>
+              <ProductCard/>
+              <ProductCard/>
+              </div>
+          </div>
         </div>
-      </section>
+      </section> */}
+
+      
     </>
   )
 }
