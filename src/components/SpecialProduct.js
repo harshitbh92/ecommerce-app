@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactStars from "react-rating-stars-component";
 // import { useTimer } from 'react-timer-hook';
-import ProgressBar from "@ramonak/react-progress-bar";
+// import ProgressBar from "@ramonak/react-progress-bar";
 
 import headphone from "../images/headphone.jpg"
 import headphone2 from "../images/headphone2.jpeg"
@@ -36,8 +36,8 @@ const SpecialProduct = () => {
                         activeColor="#ffd700"
                     />
                     <p className='price d-flex gap-10'>
-                        <div><span className='actual-price '>$100.00</span></div>
-                        <div><strike>$410</strike></div>
+                        <span className='actual-price '>$100.00</span>
+                        <strike>$410</strike>
                     </p>
                     <div className='discount-till d-flex align-items-center gap-10'>
                         <p className='mb-0'>
@@ -49,7 +49,7 @@ const SpecialProduct = () => {
                     </div>
                     <div className='prod-count my-3'>
                         <p>Products : 104</p>
-                        <div class="progress">
+                        <div className="progress">
                             <div className="progress-bar" 
                                 role="progressbar" 
                                 style={{width: '25%'}} 

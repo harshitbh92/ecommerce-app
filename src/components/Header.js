@@ -96,7 +96,7 @@ const Header = () => {
                       <img src={img5} alt='menu'  style={{ filter: 'brightness(0) invert(1)' }}/>
                      <span >Shop Categories</span>
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                       <li><Link className="dropdown-item text-white" to="">Action</Link></li>
                       <li><Link className="dropdown-item text-white" to="">Another action</Link></li>
                       <li><Link className="dropdown-item text-white" to="">Something else here</Link></li>
