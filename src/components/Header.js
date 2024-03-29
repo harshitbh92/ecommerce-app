@@ -61,20 +61,21 @@ const Header = () => {
                     <p className='mb-0'>Add to  <br /> Wishlist</p>
                   </Link>
                 </div>
-                <div>
-                  <Link
-                  to='/login'
-                   className='d-flex align-items-center text-white gap-10'>
-                    <img src={img3} alt='log in' style={{ filter: 'brightness(0) invert(1)' }} />
-                    <p className='mb-0'>Log in <br /> My Account</p>
-                  </Link>
-                </div>
+                
                 <div>
                   <Link
                   to='/cart'
                    className='d-flex align-items-center text-white gap-10'>
                     <img src={img4} alt='cart' style={{ filter: 'brightness(0) invert(1)' }} />
                     <p className='mb-0'>$400</p>
+                  </Link>
+                </div>
+                <div>
+                  <Link
+                  to='/login'
+                   className='d-flex align-items-center text-white gap-10'>
+                    <img src={img3} alt='log in' style={{ filter: 'brightness(0) invert(1)' }} />
+                    <p className='mb-0'>Log in <br /> My Account</p>
                   </Link>
                 </div>
 

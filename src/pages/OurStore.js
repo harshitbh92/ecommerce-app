@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Breadcrum from '../components/Breadcrum'
 import ReactStars from "react-rating-stars-component";
 import ProductCard from '../components/ProductCard';
+import { useDispatch, useSelector } from 'react-redux';
+import Container from '../components/Container'
+
 import { Link } from 'react-router-dom'
 
 import prod1 from "../images/watch.jpg";
@@ -31,14 +34,25 @@ import gr4 from "../images/3items_horizontal.png"
 import gr2 from "../images/bars.png"
 import gr3 from "../images/2items.png"
 import Color from '../components/Color';
+import { getAllProducts } from '../features/products/productSlice';
 
 const OurStore = () => {
-  // const {grid, setGrid} = useState(4);
+  const [grid, setGrid] = useState(4);
+  const productState = useSelector((state) => state.product.product);
+  console.log(productState);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    getProducts();
+  }, [])
   // alert(grid);
+  const getProducts = () => {
+    dispatch(getAllProducts());
+  }
   return (
     <>
       <Breadcrum title='Our Store' />
-      <div className='store-wrapper py-5 '>
+
+      <div className='store-wrapper py-5'>
         <div className='container-xxl'>
           <div className='row'>
             <div className='col-3'>
@@ -86,7 +100,7 @@ const OurStore = () => {
 
                   <h5 className='sub-title'>Colors</h5>
                   <div>
-                    <Color/>
+                    <Color />
                   </div>
                   <h5 className='sub-title'>Size</h5>
                   <div>
@@ -210,27 +224,30 @@ const OurStore = () => {
                   <div className='d-flex align-items-center gap-10'>
                     <p className='totalproducts mb-0'><b>120 products</b></p>
                     <div className='d-flex align-items-center gap-10 grid'>
-                      <img 
-                      src={gr1}
-                        
+                      <img
+                        onClick={() => {
+                          setGrid(3);
+                        }}
+                        src={gr1}
                         className='d-block img-fluid' alt='grid' />
-                      <img 
-                      src={gr2}
-                        // onClick={()=>{
-                        //   setGrid(3);
-                        // }}
+                      <img
+                        onClick={() => {
+                          setGrid(4);
+                        }}
+                        src={gr2}
                         className='d-block img-fluid' alt='grid' />
-                      <img 
-                      src={gr3}
-                        // onClick={()=>{
-                        //   setGrid(2);
-                        // }}
+                      <img
+                        onClick={() => {
+                          setGrid(6);
+                        }}
+                        src={gr3}
                         className='d-block img-fluid' alt='grid' />
-                      <img 
-                       src={gr4}
-                        // onClick={()=>{
-                        //   setGrid(1);
-                        // }}
+                      <img
+                        onClick={() => {
+                          setGrid(12);
+                        }}
+                        src={gr4}
+
                         className='d-block img-fluid' alt='grid' />
                     </div>
                   </div>
@@ -239,658 +256,12 @@ const OurStore = () => {
               </div>
 
               <div className='products-list pb-5'>
-                <div className='gap-10 flex wrap'>
-                  <div className='row mb-4'>
-                    <div className='col-3'>
-                      <div className='product-card position-relative'>
-                        <div className='wishlist-icon position-absolute'>
-                          <Link>
-                            <img src={wishlist} alt='wishlist' />
-                          </Link>
-                        </div>
-                        <div className='prod-image'>
-                          <img src={prod1} className='prod-img img-fluid' alt='product-image' />
-                          {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
-                        </div>
-                        <div className='prod-details'>
-                          <h6 className='brand-name'>Titan</h6>
-                          <h6 className='product-title'>
-                            Kids watch bulk 10 items pack multi colored
-                          </h6>
-                          <ReactStars
-                            count={5}
-                            size={24}
-                            value='3.5'
-                            edit={false}
-                            activeColor="#ffd700"
-                          />
-                          <p className='price'>$100.00</p>
-                        </div>
-                        <div className='action-bar position-absolute'>
-                          <div className='d-flex flex-column gap-10'>
-                            <Link>
-                              <img src={compare} alt='compare products' />
-                            </Link>
-                            <Link to='/product/:id'>
-                              <img src={view} alt='view product' />
-                            </Link>
-                            <Link>
-                              <img src={cart} alt='add to cart' />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='col-3'>
-                      <div className='product-card position-relative'>
-                        <div className='wishlist-icon position-absolute'>
-                          <Link>
-                            <img src={wishlist} alt='wishlist' />
-                          </Link>
-                        </div>
-                        <div className='prod-image'>
-                          <img src={prod2} className='prod-img img-fluid' alt='product-image' />
-                          {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
-                        </div>
-                        <div className='prod-details'>
-                          <h6 className='brand-name'>Titan</h6>
-                          <h6 className='product-title'>
-                            Kids watch bulk 10 items pack multi colored
-                          </h6>
-                          <ReactStars
-                            count={5}
-                            size={24}
-                            value='3.5'
-                            edit={false}
-                            activeColor="#ffd700"
-                          />
-                          <p className='price'>$100.00</p>
-                        </div>
-                        <div className='action-bar position-absolute'>
-                          <div className='d-flex flex-column gap-10'>
-                            <Link>
-                              <img src={compare} alt='compare products' />
-                            </Link>
-                            <Link to='/product/:id'>
-                              <img src={view} alt='view product' />
-                            </Link>
-                            <Link>
-                              <img src={cart} alt='add to cart' />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='col-3'>
-                      <div className='product-card position-relative'>
-                        <div className='wishlist-icon position-absolute'>
-                          <Link>
-                            <img src={wishlist} alt='wishlist' />
-                          </Link>
-                        </div>
-                        <div className='prod-image'>
-                          <img src={prod3} className='prod-img img-fluid' alt='product-image' />
-                          {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
-                        </div>
-                        <div className='prod-details'>
-                          <h6 className='brand-name'>Titan</h6>
-                          <h6 className='product-title'>
-                            Kids watch bulk 10 items pack multi colored
-                          </h6>
-                          <ReactStars
-                            count={5}
-                            size={24}
-                            value='3.5'
-                            edit={false}
-                            activeColor="#ffd700"
-                          />
-                          <p className='price'>$100.00</p>
-                        </div>
-                        <div className='action-bar position-absolute'>
-                          <div className='d-flex flex-column gap-10'>
-                            <Link>
-                              <img src={compare} alt='compare products' />
-                            </Link>
-                            <Link to='/product/:id'>
-                              <img src={view} alt='view product' />
-                            </Link>
-                            <Link>
-                              <img src={cart} alt='add to cart' />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='col-3'>
-                      <div className='product-card position-relative'>
-                        <div className='wishlist-icon position-absolute'>
-                          <Link>
-                            <img src={wishlist} alt='wishlist' />
-                          </Link>
-                        </div>
-                        <div className='prod-image'>
-                          <img src={prod4} className='prod-img img-fluid' alt='product-image' />
-                          {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
-                        </div>
-                        <div className='prod-details'>
-                          <h6 className='brand-name'>Titan</h6>
-                          <h6 className='product-title'>
-                            Kids watch bulk 10 items pack multi colored
-                          </h6>
-                          <ReactStars
-                            count={5}
-                            size={24}
-                            value='3.5'
-                            edit={false}
-                            activeColor="#ffd700"
-                          />
-                          <p className='price'>$100.00</p>
-                        </div>
-                        <div className='action-bar position-absolute'>
-                          <div className='d-flex flex-column gap-10'>
-                            <Link>
-                              <img src={compare} alt='compare products' />
-                            </Link>
-                            <Link to='/product/:id'>
-                              <img src={view} alt='view product' />
-                            </Link>
-                            <Link>
-                              <img src={cart} alt='add to cart' />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='row mb-4'>
-                    <div className='col-3'>
-                      <div className='product-card position-relative'>
-                        <div className='wishlist-icon position-absolute'>
-                          <Link>
-                            <img src={wishlist} alt='wishlist' />
-                          </Link>
-                        </div>
-                        <div className='prod-image'>
-                          <img src={prod5} className='prod-img img-fluid' alt='product-image' />
-                          {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
-                        </div>
-                        <div className='prod-details'>
-                          <h6 className='brand-name'>Titan</h6>
-                          <h6 className='product-title'>
-                            Kids watch bulk 10 items pack multi colored
-                          </h6>
-                          <ReactStars
-                            count={5}
-                            size={24}
-                            value='3.5'
-                            edit={false}
-                            activeColor="#ffd700"
-                          />
-                          <p className='price'>$100.00</p>
-                        </div>
-                        <div className='action-bar position-absolute'>
-                          <div className='d-flex flex-column gap-10'>
-                            <Link>
-                              <img src={compare} alt='compare products' />
-                            </Link>
-                            <Link to='/product/:id'>
-                              <img src={view} alt='view product' />
-                            </Link>
-                            <Link>
-                              <img src={cart} alt='add to cart' />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='col-3'>
-                      <div className='product-card position-relative'>
-                        <div className='wishlist-icon position-absolute'>
-                          <Link>
-                            <img src={wishlist} alt='wishlist' />
-                          </Link>
-                        </div>
-                        <div className='prod-image'>
-                          <img src={prod6} className='prod-img img-fluid' alt='product-image' />
-                          {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
-                        </div>
-                        <div className='prod-details'>
-                          <h6 className='brand-name'>Titan</h6>
-                          <h6 className='product-title'>
-                            Kids watch bulk 10 items pack multi colored
-                          </h6>
-                          <ReactStars
-                            count={5}
-                            size={24}
-                            value='3.5'
-                            edit={false}
-                            activeColor="#ffd700"
-                          />
-                          <p className='price'>$100.00</p>
-                        </div>
-                        <div className='action-bar position-absolute'>
-                          <div className='d-flex flex-column gap-10'>
-                            <Link>
-                              <img src={compare} alt='compare products' />
-                            </Link>
-                            <Link to='/product/:id'>
-                              <img src={view} alt='view product' />
-                            </Link>
-                            <Link>
-                              <img src={cart} alt='add to cart' />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='col-3'>
-                      <div className='product-card position-relative'>
-                        <div className='wishlist-icon position-absolute'>
-                          <Link>
-                            <img src={wishlist} alt='wishlist' />
-                          </Link>
-                        </div>
-                        <div className='prod-image'>
-                          <img src={prod7} className='prod-img img-fluid' alt='product-image' />
-                          {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
-                        </div>
-                        <div className='prod-details'>
-                          <h6 className='brand-name'>Titan</h6>
-                          <h6 className='product-title'>
-                            Kids watch bulk 10 items pack multi colored
-                          </h6>
-                          <ReactStars
-                            count={5}
-                            size={24}
-                            value='3.5'
-                            edit={false}
-                            activeColor="#ffd700"
-                          />
-                          <p className='price'>$100.00</p>
-                        </div>
-                        <div className='action-bar position-absolute'>
-                          <div className='d-flex flex-column gap-10'>
-                            <Link>
-                              <img src={compare} alt='compare products' />
-                            </Link>
-                            <Link to='/product/:id'>
-                              <img src={view} alt='view product' />
-                            </Link>
-                            <Link>
-                              <img src={cart} alt='add to cart' />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='col-3'>
-                      <div className='product-card position-relative'>
-                        <div className='wishlist-icon position-absolute'>
-                          <Link>
-                            <img src={wishlist} alt='wishlist' />
-                          </Link>
-                        </div>
-                        <div className='prod-image'>
-                          <img src={prod8} className='prod-img img-fluid' alt='product-image' />
-                          {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
-                        </div>
-                        <div className='prod-details'>
-                          <h6 className='brand-name'>Titan</h6>
-                          <h6 className='product-title'>
-                            Kids watch bulk 10 items pack multi colored
-                          </h6>
-                          <ReactStars
-                            count={5}
-                            size={24}
-                            value='3.5'
-                            edit={false}
-                            activeColor="#ffd700"
-                          />
-                          <p className='price'>$100.00</p>
-                        </div>
-                        <div className='action-bar position-absolute'>
-                          <div className='d-flex flex-column gap-10'>
-                            <Link>
-                              <img src={compare} alt='compare products' />
-                            </Link>
-                            <Link to='/product/:id'>
-                              <img src={view} alt='view product' />
-                            </Link>
-                            <Link>
-                              <img src={cart} alt='add to cart' />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='row mb-4'>
-                    <div className='col-3'>
-                      <div className='product-card position-relative'>
-                        <div className='wishlist-icon position-absolute'>
-                          <Link>
-                            <img src={wishlist} alt='wishlist' />
-                          </Link>
-                        </div>
-                        <div className='prod-image'>
-                          <img src={prod9} className='prod-img img-fluid' alt='product-image' />
-                          {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
-                        </div>
-                        <div className='prod-details'>
-                          <h6 className='brand-name'>Titan</h6>
-                          <h6 className='product-title'>
-                            Kids watch bulk 10 items pack multi colored
-                          </h6>
-                          <ReactStars
-                            count={5}
-                            size={24}
-                            value='3.5'
-                            edit={false}
-                            activeColor="#ffd700"
-                          />
-                          <p className='price'>$100.00</p>
-                        </div>
-                        <div className='action-bar position-absolute'>
-                          <div className='d-flex flex-column gap-10'>
-                            <Link>
-                              <img src={compare} alt='compare products' />
-                            </Link>
-                            <Link to='/product/:id'>
-                              <img src={view} alt='view product' />
-                            </Link>
-                            <Link>
-                              <img src={cart} alt='add to cart' />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='col-3'>
-                      <div className='product-card position-relative'>
-                        <div className='wishlist-icon position-absolute'>
-                          <Link>
-                            <img src={wishlist} alt='wishlist' />
-                          </Link>
-                        </div>
-                        <div className='prod-image'>
-                          <img src={prod10} className='prod-img img-fluid' alt='product-image' />
-                          {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
-                        </div>
-                        <div className='prod-details'>
-                          <h6 className='brand-name'>Titan</h6>
-                          <h6 className='product-title'>
-                            Kids watch bulk 10 items pack multi colored
-                          </h6>
-                          <ReactStars
-                            count={5}
-                            size={24}
-                            value='3.5'
-                            edit={false}
-                            activeColor="#ffd700"
-                          />
-                          <p className='price'>$100.00</p>
-                        </div>
-                        <div className='action-bar position-absolute'>
-                          <div className='d-flex flex-column gap-10'>
-                            <Link>
-                              <img src={compare} alt='compare products' />
-                            </Link>
-                            <Link to='/product/:id'>
-                              <img src={view} alt='view product' />
-                            </Link>
-                            <Link>
-                              <img src={cart} alt='add to cart' />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='col-3'>
-                      <div className='product-card position-relative'>
-                        <div className='wishlist-icon position-absolute'>
-                          <Link>
-                            <img src={wishlist} alt='wishlist' />
-                          </Link>
-                        </div>
-                        <div className='prod-image'>
-                          <img src={prod11} className='prod-img img-fluid' alt='product-image' />
-                          {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
-                        </div>
-                        <div className='prod-details'>
-                          <h6 className='brand-name'>Titan</h6>
-                          <h6 className='product-title'>
-                            Kids watch bulk 10 items pack multi colored
-                          </h6>
-                          <ReactStars
-                            count={5}
-                            size={24}
-                            value='3.5'
-                            edit={false}
-                            activeColor="#ffd700"
-                          />
-                          <p className='price'>$100.00</p>
-                        </div>
-                        <div className='action-bar position-absolute'>
-                          <div className='d-flex flex-column gap-10'>
-                            <Link>
-                              <img src={compare} alt='compare products' />
-                            </Link>
-                            <Link to='/product/:id'>
-                              <img src={view} alt='view product' />
-                            </Link>
-                            <Link>
-                              <img src={cart} alt='add to cart' />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='col-3'>
-                      <div className='product-card position-relative'>
-                        <div className='wishlist-icon position-absolute'>
-                          <Link>
-                            <img src={wishlist} alt='wishlist' />
-                          </Link>
-                        </div>
-                        <div className='prod-image'>
-                          <img src={prod12} className='prod-img img-fluid' alt='product-image' />
-                          {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
-                        </div>
-                        <div className='prod-details'>
-                          <h6 className='brand-name'>Titan</h6>
-                          <h6 className='product-title'>
-                            Kids watch bulk 10 items pack multi colored
-                          </h6>
-                          <ReactStars
-                            count={5}
-                            size={24}
-                            value='3.5'
-                            edit={false}
-                            activeColor="#ffd700"
-                          />
-                          <p className='price'>$100.00</p>
-                        </div>
-                        <div className='action-bar position-absolute'>
-                          <div className='d-flex flex-column gap-10'>
-                            <Link>
-                              <img src={compare} alt='compare products' />
-                            </Link>
-                            <Link to='/product/:id'>
-                              <img src={view} alt='view product' />
-                            </Link>
-                            <Link>
-                              <img src={cart} alt='add to cart' />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='row mb-4'>
-                    <div className='col-3'>
-                      <div className='product-card position-relative'>
-                        <div className='wishlist-icon position-absolute'>
-                          <Link>
-                            <img src={wishlist} alt='wishlist' />
-                          </Link>
-                        </div>
-                        <div className='prod-image'>
-                          <img src={prod13} className='prod-img img-fluid' alt='product-image' />
-                          {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
-                        </div>
-                        <div className='prod-details'>
-                          <h6 className='brand-name'>Titan</h6>
-                          <h6 className='product-title'>
-                            Kids watch bulk 10 items pack multi colored
-                          </h6>
-                          <ReactStars
-                            count={5}
-                            size={24}
-                            value='3.5'
-                            edit={false}
-                            activeColor="#ffd700"
-                          />
-                          <p className='price'>$100.00</p>
-                        </div>
-                        <div className='action-bar position-absolute'>
-                          <div className='d-flex flex-column gap-10'>
-                            <Link>
-                              <img src={compare} alt='compare products' />
-                            </Link>
-                            <Link to='/product/:id'>
-                              <img src={view} alt='view product' />
-                            </Link>
-                            <Link>
-                              <img src={cart} alt='add to cart' />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='col-3'>
-                      <div className='product-card position-relative'>
-                        <div className='wishlist-icon position-absolute'>
-                          <Link>
-                            <img src={wishlist} alt='wishlist' />
-                          </Link>
-                        </div>
-                        <div className='prod-image'>
-                          <img src={prod14} className='prod-img img-fluid' alt='product-image' />
-                          {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
-                        </div>
-                        <div className='prod-details'>
-                          <h6 className='brand-name'>Titan</h6>
-                          <h6 className='product-title'>
-                            Kids watch bulk 10 items pack multi colored
-                          </h6>
-                          <ReactStars
-                            count={5}
-                            size={24}
-                            value='3.5'
-                            edit={false}
-                            activeColor="#ffd700"
-                          />
-                          <p className='price'>$100.00</p>
-                        </div>
-                        <div className='action-bar position-absolute'>
-                          <div className='d-flex flex-column gap-10'>
-                            <Link>
-                              <img src={compare} alt='compare products' />
-                            </Link>
-                            <Link to='/product/:id'>
-                              <img src={view} alt='view product' />
-                            </Link>
-                            <Link>
-                              <img src={cart} alt='add to cart' />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='col-3'>
-                      <div className='product-card position-relative'>
-                        <div className='wishlist-icon position-absolute'>
-                          <Link>
-                            <img src={wishlist} alt='wishlist' />
-                          </Link>
-                        </div>
-                        <div className='prod-image'>
-                          <img src={prod15} className='prod-img img-fluid' alt='product-image' />
-                          {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
-                        </div>
-                        <div className='prod-details'>
-                          <h6 className='brand-name'>Titan</h6>
-                          <h6 className='product-title'>
-                            Kids watch bulk 10 items pack multi colored
-                          </h6>
-                          <ReactStars
-                            count={5}
-                            size={24}
-                            value='3.5'
-                            edit={false}
-                            activeColor="#ffd700"
-                          />
-                          <p className='price'>$100.00</p>
-                        </div>
-                        <div className='action-bar position-absolute'>
-                          <div className='d-flex flex-column gap-10'>
-                            <Link>
-                              <img src={compare} alt='compare products' />
-                            </Link>
-                            <Link to='/product/:id'>
-                              <img src={view} alt='view product' />
-                            </Link>
-                            <Link>
-                              <img src={cart} alt='add to cart' />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='col-3'>
-                      <div className='product-card position-relative'>
-                        <div className='wishlist-icon position-absolute'>
-                          <Link>
-                            <img src={wishlist} alt='wishlist' />
-                          </Link>
-                        </div>
-                        <div className='prod-image'>
-                          <img src={prod16} className='prod-img img-fluid' alt='product-image' />
-                          {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
-                        </div>
-                        <div className='prod-details'>
-                          <h6 className='brand-name'>Titan</h6>
-                          <h6 className='product-title'>
-                            Kids watch bulk 10 items pack multi colored
-                          </h6>
-                          <ReactStars
-                            count={5}
-                            size={24}
-                            value='3.5'
-                            edit={false}
-                            activeColor="#ffd700"
-                          />
-                          <p className='price'>$100.00</p>
-                        </div>
-                        <div className='action-bar position-absolute'>
-                          <div className='d-flex flex-column gap-10'>
-                            <Link>
-                              <img src={compare} alt='compare products' />
-                            </Link>
-                            <Link to='/product/:id'>
-                              <img src={view} alt='view product' />
-                            </Link>
-                            <Link>
-                              <img src={cart} alt='add to cart' />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
+                <div className='d-flex gap-10 flex-wrap'>
+                  <ProductCard data={productState} grid={grid} />
                 </div>
               </div>
+
+
               <div className=' d-flex  justify-content-center'>
                 <nav aria-label="Page navigation example">
                   <ul class="pagination">
@@ -901,11 +272,13 @@ const OurStore = () => {
                     <li class="page-item"><a class="page-link" href="#">Next</a></li>
                   </ul>
                 </nav>
-              </div>
+              </div   >
             </div>
           </div>
+
         </div>
       </div>
+
     </>
   )
 }

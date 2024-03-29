@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import ReactStars from "react-rating-stars-component";
 
 import prod1 from "../images/watch.jpg";
@@ -13,10 +13,16 @@ import compare from '../images/compare.png'
 import view from "../images/view.png"
 import wishlist from "../images/wishlist.png"
 
-const ProductCard = () => {
+const ProductCard = (props) => {
+  let location = useLocation();
+  const {grid} = props;
   return (
-    <div className='col-2'>
-      <div className='product-card position-relative'>
+
+    <>
+    <div className={`${location.pathname == "/store" ? `gr-${grid}` : "col-3"}`}>
+      <Link to={`${location.pathname == "/"? "/product/:id" : location.pathname == "/product/:id" ? "/product/:id" : ":id" }`} 
+
+       className='product-card position-relative'>
         <div className='wishlist-icon position-absolute'>
           <Link>
             <img src={wishlist} alt='wishlist' />
@@ -45,7 +51,7 @@ const ProductCard = () => {
             <Link>
               <img src={compare} alt='compare products' />
             </Link>
-            <Link>
+            <Link to='/product/:id'>
               <img src={view} alt='view product' />
             </Link>
             <Link>
@@ -53,8 +59,51 @@ const ProductCard = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
+    
+    
+    </>
+    // <div className='col-2'>
+    //   <div className='product-card position-relative'>
+    //     <div className='wishlist-icon position-absolute'>
+    //       <Link>
+    //         <img src={wishlist} alt='wishlist' />
+    //       </Link>
+    //     </div>
+    //     <div className='prod-image'>
+    //       <img src={prod1} className='prod-img img-fluid' alt='product-image' />
+    //       {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
+    //     </div>
+    //     <div className='prod-details'>
+    //       <h6 className='brand-name'>Titan</h6>
+    //       <h6 className='product-title'>
+    //         Kids watch bulk 10 items pack multi colored
+    //       </h6>
+    //       <ReactStars
+    //         count={5}
+    //         size={24}
+    //         value='3.5'
+    //         edit={false}
+    //         activeColor="#ffd700"
+    //       />
+    //       <p className='price'>$100.00</p>
+    //     </div>
+    //     <div className='action-bar position-absolute'>
+    //       <div className='d-flex flex-column gap-10'>
+    //         <Link>
+    //           <img src={compare} alt='compare products' />
+    //         </Link>
+    //         <Link>
+    //           <img src={view} alt='view product' />
+    //         </Link>
+    //         <Link>
+    //           <img src={cart} alt='add to cart' />
+    //         </Link>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
   )
 }
 
