@@ -22,6 +22,7 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Shipping from './pages/Shipping';
 import SingleProduct from './pages/SingleProduct';
+import NoPage from './pages/NoPage';
 //whatever we pass in the <Route> will reflect in <Outlet> of Layout.js
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
             <Route path="checkout" element={<Checkout />} />
             <Route path="shipping" element={<Shipping />} />
             <Route path="product/:id" element={<SingleProduct />} />
+            <Route path="error" element={<NoPage/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

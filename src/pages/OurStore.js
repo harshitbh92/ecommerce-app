@@ -3,30 +3,30 @@ import Breadcrum from '../components/Breadcrum'
 import ReactStars from "react-rating-stars-component";
 import ProductCard from '../components/ProductCard';
 import { useDispatch, useSelector } from 'react-redux';
-import Container from '../components/Container'
+// import Container from '../components/Container'
 
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
-import prod1 from "../images/watch.jpg";
-import prod2 from "../images/prod2.jpg";
-import prod3 from "../images/prod3.jpg";
-import prod4 from "../images/prod4.jpg";
-import prod5 from "../images/prod5.jpg";
-import prod6 from "../images/prod6.jpg";
-import prod7 from "../images/prod7.jpg";
-import prod8 from "../images/prod8.jpg";
-import prod9 from "../images/prod9.jpg";
-import prod10 from "../images/prod10.jpg";
-import prod11 from "../images/prod11.jpg";
-import prod12 from "../images/prod12.jpg";
-import prod13 from "../images/prod13.jpg";
-import prod14 from "../images/prod14.jpg";
-import prod15 from "../images/prod15.jpg";
-import prod16 from "../images/prod16.jpg";
-import cart from "../images/cart.png";
-import compare from '../images/compare.png'
-import view from "../images/view.png"
-import wishlist from "../images/wishlist.png"
+// import prod1 from "../images/watch.jpg";
+// import prod2 from "../images/prod2.jpg";
+// import prod3 from "../images/prod3.jpg";
+// import prod4 from "../images/prod4.jpg";
+// import prod5 from "../images/prod5.jpg";
+// import prod6 from "../images/prod6.jpg";
+// import prod7 from "../images/prod7.jpg";
+// import prod8 from "../images/prod8.jpg";
+// import prod9 from "../images/prod9.jpg";
+// import prod10 from "../images/prod10.jpg";
+// import prod11 from "../images/prod11.jpg";
+// import prod12 from "../images/prod12.jpg";
+// import prod13 from "../images/prod13.jpg";
+// import prod14 from "../images/prod14.jpg";
+// import prod15 from "../images/prod15.jpg";
+// import prod16 from "../images/prod16.jpg";
+// import cart from "../images/cart.png";
+// import compare from '../images/compare.png'
+// import view from "../images/view.png"
+// import wishlist from "../images/wishlist.png"
 import speaker from "../images/speaker.jpg"
 import laptop from "../images/laptop.jpg"
 import gr1 from "../images/default_items.png"
@@ -39,7 +39,7 @@ import { getAllProducts } from '../features/products/productSlice';
 const OurStore = () => {
   const [grid, setGrid] = useState(4);
   const productState = useSelector((state) => state.product.product);
-  console.log(productState);
+  // console.log(productState);
   const dispatch = useDispatch();
   useEffect(() => {
     getProducts();

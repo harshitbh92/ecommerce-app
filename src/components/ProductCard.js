@@ -15,14 +15,17 @@ import wishlist from "../images/wishlist.png"
 
 const ProductCard = (props) => {
   let location = useLocation();
-  const {grid} = props;
+  const {data,grid} = props;
+  console.log(data);
   return (
 
     <>
-    <div className={`${location.pathname == "/store" ? `gr-${grid}` : "col-3"}`}>
+    {
+      data?.map((item,index)=>{
+        return(
+          <div key={index} className={`${location.pathname == "/store" ? `gr-${grid}` : "col-3"}`}>
       <Link to={`${location.pathname == "/"? "/product/:id" : location.pathname == "/product/:id" ? "/product/:id" : ":id" }`} 
-
-       className='product-card position-relative'>
+        className='product-card position-relative'>
         <div className='wishlist-icon position-absolute'>
           <Link>
             <img src={wishlist} alt='wishlist' />
@@ -33,18 +36,18 @@ const ProductCard = (props) => {
           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
         </div>
         <div className='prod-details'>
-          <h6 className='brand-name'>Titan</h6>
+          <h6 className='brand-name'>{item?.brand}</h6>
           <h6 className='product-title'>
-            Kids watch bulk 10 items pack multi colored
+            {item?.description}
           </h6>
           <ReactStars
             count={5}
             size={24}
-            value='3.5'
+            value={item?.totalrating.toString()}
             edit={false}
             activeColor="#ffd700"
           />
-          <p className='price'>$100.00</p>
+          <p className='price'>${item.price}</p>
         </div>
         <div className='action-bar position-absolute'>
           <div className='d-flex flex-column gap-10'>
@@ -61,6 +64,10 @@ const ProductCard = (props) => {
         </div>
       </Link>
     </div>
+        )
+      })
+    }
+    
     
     
     </>
