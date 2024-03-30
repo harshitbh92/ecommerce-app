@@ -15,15 +15,19 @@ import wishlist from "../images/wishlist.png"
 
 const ProductCard = (props) => {
   let location = useLocation();
-  const {data,grid} = props;
-  console.log(data);
+  const {products,grid} = props;
+  console.log(typeof products);
+  console.log( products);
+   // Check if data is an array and has at least one element
+   
   return (
 
     <>
-    {
-      data?.map((item,index)=>{
-        return(
-          <div key={index} className={`${location.pathname == "/store" ? `gr-${grid}` : "col-3"}`}>
+
+      {
+        products && products?.data.map(
+          (product) => (
+            <div className={`${location.pathname == "/store" ? `gr-${grid}` : "col-3"}`}>
       <Link to={`${location.pathname == "/"? "/product/:id" : location.pathname == "/product/:id" ? "/product/:id" : ":id" }`} 
         className='product-card position-relative'>
         <div className='wishlist-icon position-absolute'>
@@ -36,18 +40,21 @@ const ProductCard = (props) => {
           {/* <img src={smartwatch} className='prod-img-hover img-fluid' alt='product-image'/> */}
         </div>
         <div className='prod-details'>
-          <h6 className='brand-name'>{item?.brand}</h6>
+          
+                     <h6 className='brand-name'>{product.brand}</h6>
+
           <h6 className='product-title'>
-            {item?.description}
+            {product.description}
           </h6>
           <ReactStars
             count={5}
             size={24}
-            value={item?.totalrating.toString()}
+            value={product?.totalrating.toString()}
+            // value='3.5'
             edit={false}
             activeColor="#ffd700"
           />
-          <p className='price'>${item.price}</p>
+          <p className='price'>${product.price}</p>
         </div>
         <div className='action-bar position-absolute'>
           <div className='d-flex flex-column gap-10'>
@@ -64,9 +71,14 @@ const ProductCard = (props) => {
         </div>
       </Link>
     </div>
+          )
         )
-      })
-    }
+      }
+
+
+      
+        
+      
     
     
     

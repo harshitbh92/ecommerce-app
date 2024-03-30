@@ -3,6 +3,10 @@ import Breadcrum from '../components/Breadcrum'
 import ReactStars from "react-rating-stars-component";
 import ProductCard from '../components/ProductCard';
 import { useDispatch, useSelector } from 'react-redux';
+import axios from "axios"
+import { base_url } from "../utils/axiosconfig";
+
+
 // import Container from '../components/Container'
 
 // import { Link } from 'react-router-dom'
@@ -37,17 +41,29 @@ import Color from '../components/Color';
 import { getAllProducts } from '../features/products/productSlice';
 
 const OurStore = () => {
-  const [grid, setGrid] = useState(4);
-  const productState = useSelector((state) => state.product.product);
+  
   // console.log(productState);
-  const dispatch = useDispatch();
+  const [productState, setProducts] = useState("");
   useEffect(() => {
-    getProducts();
-  }, [])
+    const fetchdata = async()=>{
+      const productData = await axios.get(`${base_url}product/`);
+      // console.log("productData >>",productData);
+      setProducts(productData);
+    }
+    fetchdata();
+    // getProducts();
+  }, []) 
+  console.log("productState>>>",productState);
+  // const productState = useSelector((state) => state.product.product);
+  // console.log( productState);
+  // console.log(Array.isArray(productState));
+  const [grid, setGrid] = useState(4);
+
+  // const dispatch = useDispatch();
   // alert(grid);
-  const getProducts = () => {
-    dispatch(getAllProducts());
-  }
+  // const getProducts = () => {
+  //   dispatch(getAllProducts());
+  // }
   return (
     <>
       <Breadcrum title='Our Store' />
@@ -89,11 +105,11 @@ const OurStore = () => {
                   <h5 className='sub-title'>Price</h5>
                   <div className='d-flex align-items-center gap-10'>
                     <div className="form-floating mb-3">
-                      <input type="text" class="form-control" id="floatingInput" placeholder="From" />
+                      <input type="text" className="form-control" id="floatingInput" placeholder="From" />
                       <label for="floatingInput">From</label>
                     </div>
                     <div className="form-floating mb-3">
-                      <input type="text" class="form-control" id="floatingInput1" placeholder="To" />
+                      <input type="text" className="form-control" id="floatingInput1" placeholder="To" />
                       <label for="floatingInput1">To</label>
                     </div>
                   </div>
@@ -257,19 +273,20 @@ const OurStore = () => {
 
               <div className='products-list pb-5'>
                 <div className='d-flex gap-10 flex-wrap'>
-                  <ProductCard data={productState} grid={grid} />
+                  <ProductCard products={productState} grid={grid} />
+                  {/* console.log(data); */}
                 </div>
               </div>
 
 
               <div className=' d-flex  justify-content-center'>
                 <nav aria-label="Page navigation example">
-                  <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  <ul className="pagination">
+                    <li className="page-item"><a className="page-link" href="#">Previous</a></li>
+                    <li className="page-item"><a className="page-link" href="#">1</a></li>
+                    <li className="page-item"><a className="page-link" href="#">2</a></li>
+                    <li className="page-item"><a className="page-link" href="#">3</a></li>
+                    <li className="page-item"><a className="page-link" href="#">Next</a></li>
                   </ul>
                 </nav>
               </div   >
