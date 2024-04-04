@@ -58,7 +58,7 @@ const Header = () => {
                   to='/wishlist'
                   className='d-flex align-items-center text-white gap-10'>
                     <img src={img2} alt='wishlist' style={{ filter: 'brightness(0) invert(1)' }} />
-                    <p className='mb-0'>Add to  <br /> Wishlist</p>
+                    <p className='mb-0'> Wishlist</p>
                   </Link>
                 </div>
                 

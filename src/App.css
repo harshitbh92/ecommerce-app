@@ -590,6 +590,7 @@ footer:not(:first-child){
   background-color: white;
   padding: 20px 15px;
   border-radius: 10px;
+  margin-top: 15px;
 }
 .compare-product-image img{
   height: 280px;

@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import ReactStars from "react-rating-stars-component";
+import { toast } from 'react-toastify';
+import { FaHeart } from "react-icons/fa";
 
 import prod1 from "../images/watch.jpg";
 // import prod2 from "../images/prod2.jpg";
@@ -12,14 +14,36 @@ import cart from "../images/cart.png";
 import compare from '../images/compare.png'
 import view from "../images/view.png"
 import wishlist from "../images/wishlist.png"
+import redHeart from"../images/redHeart.jpg"
+import { useDispatch, useSelector } from 'react-redux';
+import { addToWishlist } from '../features/products/productSlice';
+import { getUserProductWishlist } from '../features/user/userSlice';
 
 const ProductCard = (props) => {
   let location = useLocation();
   const {products,grid} = props;
-  console.log(typeof products);
-  console.log( products);
-   // Check if data is an array and has at least one element
-   
+    const dispatch = useDispatch();
+    // const [isInWishlist, setIsInWishlist] = useState(false);
+
+    // useEffect(() => {
+    //   getWishlistofUser();
+    // }, []);
+  
+    // const getWishlistofUser = () => {
+    //   dispatch(getUserProductWishlist());
+    // }
+  
+    const addToWish = (id) => {
+      dispatch(addToWishlist(id));
+      // setIsInWishlist(!isInWishlist); // Toggle the state when adding to wishlist
+      toast.info('Product added to wishlist');
+    }
+  
+    // const wishlistItems = useSelector(state => state.auth?.wishlist?.wishlist);
+    
+    // const isItemInWishlist = (id) => {
+    //   return wishlistItems?.some(item => item.id === id);
+    // }
   return (
 
     <>
@@ -28,12 +52,15 @@ const ProductCard = (props) => {
         products && products?.data.map(
           (product) => (
             <div className={`${location.pathname == "/store" ? `gr-${grid}` : "col-3"}`}>
-      <Link to={`${location.pathname == "/"? "/product/:id" : location.pathname == "/product/:id" ? "/product/:id" : ":id" }`} 
+      <Link 
+      //  to={`${location.pathname == "/"? "/product/:id" : location.pathname == "/product/:id" ? "/product/:id" : ":id" }`} 
         className='product-card position-relative'>
         <div className='wishlist-icon position-absolute'>
-          <Link>
-            <img src={wishlist} alt='wishlist' />
-          </Link>
+          <button className='border-0 bg-transparent'
+           onClick={(e)=>{addToWish(product?._id)}
+           }>
+             <img src={wishlist} alt='wishlist' />
+          </button>
         </div>
         <div className='prod-image'>
           <img src={prod1} className='prod-img img-fluid' alt='product-image' />
@@ -118,7 +145,7 @@ const ProductCard = (props) => {
     //         </Link>
     //         <Link>
     //           <img src={cart} alt='add to cart' />
-    //         </Link>
+    //         </Link>`
     //       </div>
     //     </div>
     //   </div>

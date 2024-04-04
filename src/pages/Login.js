@@ -30,7 +30,8 @@ const Login = () => {
                 .then(result => {
                     console.log(result)
                     toast.info("User Logged in Successfully");
-                    localStorage.setItem("token",result.data.token)
+                    localStorage.setItem("token",result.data.token);  
+                    localStorage.setItem("customer",JSON.stringify(result.data))
                     navigate('/')
                 })
                 .catch(error => console.log(error))
