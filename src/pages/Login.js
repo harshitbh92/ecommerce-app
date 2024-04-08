@@ -10,6 +10,10 @@ const Login = () => {
     // const [email, setEmail] = useState('');
     // const [password, setPassword] = useState('');
     // const navigate = useNavigate();
+    // const [loggedIn,setLoggedIn] = useState(0);
+    const [authenticated, setauthenticated] = useState(
+        localStorage.getItem(localStorage.getItem("authenticated") || false)
+      );
 
     // 2. Define validation schema using yup
     const loginSchema = yup.object().shape({
@@ -30,6 +34,7 @@ const Login = () => {
                 .then(result => {
                     console.log(result)
                     toast.info("User Logged in Successfully");
+                    localStorage.setItem("authenticated", true);
                     localStorage.setItem("token",result.data.token);  
                     localStorage.setItem("customer",JSON.stringify(result.data))
                     navigate('/')

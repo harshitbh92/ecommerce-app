@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink, Link } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
 import img1 from '../images/compare.png'
@@ -6,8 +6,18 @@ import img2 from '../images/heart.png'
 import img3 from '../images/user.png'
 import img4 from '../images/shopping-cart.png'
 import img5 from '../images/dots-menu.png'
+import { useDispatch, useSelector } from 'react-redux';
 
 const Header = () => {
+  const [authenticated, setauthenticated] = useState(null);
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("authenticated");
+    if (isLoggedIn) {
+      setauthenticated(isLoggedIn);
+    }
+  }, [])
+  const username = useSelector((state) => state.auth?.user?.firstname);
+  console.log(username);
   return (
     <>
       <header className='header-top-strip py-2'> {/*py-3 means padding on y-axis top and bottom */}
@@ -27,6 +37,7 @@ const Header = () => {
         </div>
 
       </header>
+
       <header className='header-upper py-1'>
         <div className='container-xxl'>
           <div className='row align-items-center'>
@@ -46,31 +57,41 @@ const Header = () => {
             <div className='col-5'>
               <div className='header-upper-links d-flex align-items-center justify-content-between'>
                 <div>
-                  <Link 
-                  to='/compare-product'
-                  className='d-flex align-items-center text-white gap-10'>
+                  <Link
+                    to='/compare-product'
+                    className='d-flex align-items-center text-white gap-10'>
                     <img src={img1} alt='compare products' style={{ filter: 'brightness(0) invert(1)' }} />
                     <p className='mb-0'>Compare <br /> Products</p>
                   </Link>
                 </div>
                 <div>
-                  <Link 
-                  to='/wishlist'
-                  className='d-flex align-items-center text-white gap-10'>
+                  <Link
+                    to='/wishlist'
+                    className='d-flex align-items-center text-white gap-10'>
                     <img src={img2} alt='wishlist' style={{ filter: 'brightness(0) invert(1)' }} />
                     <p className='mb-0'> Wishlist</p>
                   </Link>
                 </div>
-                
+
                 <div>
                   <Link
-                  to='/cart'
-                   className='d-flex align-items-center text-white gap-10'>
+                    to='/cart'
+                    className='d-flex align-items-center text-white gap-10'>
                     <img src={img4} alt='cart' style={{ filter: 'brightness(0) invert(1)' }} />
                     <p className='mb-0'>$400</p>
                   </Link>
                 </div>
-                <div>
+                {/* <div> */}
+                {
+                  authenticated? 
+                  <div>
+                    <Link to='/login' 
+                    className='d-flex align-items-center text-white gap-10'>
+                    <img src={img3} alt='log in' style={{ filter: 'brightness(0) invert(1)' }} />
+                    <p className='mb-0'>{username}</p>
+                    </Link>
+                  </div>:
+                  <div>
                   <Link
                   to='/login'
                    className='d-flex align-items-center text-white gap-10'>
@@ -78,8 +99,48 @@ const Header = () => {
                     <p className='mb-0'>Log in <br /> My Account</p>
                   </Link>
                 </div>
+                }
+                
 
-              </div>
+                  {/* <Link
+                    to='/login'
+                    className='d-flex align-items-center text-white gap-10'>
+                    <img src={img3} alt='log in' style={{ filter: 'brightness(0) invert(1)' }} /> */}
+
+                  {/* <div>
+                    {authenticated ? (
+                      <div className='d-flex gap-10 mt-0'>
+                        <div>
+
+
+                          <Link
+                            to='/'
+                            className='d-flex align-items-center text-white gap-10'>
+                            <img src={img3} alt='log in' style={{ filter: 'brightness(0) invert(1)' }} />
+                          </Link>
+                        </div>
+                        <div>
+                          <p className='mb-0 text-white'>{username}</p>
+                          <Link to='/'><p className='mb-0 text-white'>Logout</p></Link>
+                        </div>
+                      </div>
+                    ) : (
+                      <div>
+                        <Link
+                          to='/login'
+                          className='d-flex align-items-center text-white gap-10'>
+                          <img src={img3} alt='log in' style={{ filter: 'brightness(0) invert(1)' }} />
+                        </Link>
+                        <p className='mb-0'>Log in <br /> My Account</p>
+                      </div>
+                    )}
+                  </div> */}
+
+
+                  {/* </Link> */}
+                </div>
+
+              {/* </div> */}
             </div>
           </div>
 
@@ -94,8 +155,8 @@ const Header = () => {
                 <div className=''>
                   <div className="dropdown">
                     <button className="btn btn-secondary dropdown-toggle bg-transparent border-0 gap-15 d-flex align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                      <img src={img5} alt='menu'  style={{ filter: 'brightness(0) invert(1)' }}/>
-                     <span >Shop Categories</span>
+                      <img src={img5} alt='menu' style={{ filter: 'brightness(0) invert(1)' }} />
+                      <span >Shop Categories</span>
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                       <li><Link className="dropdown-item text-white" to="">Action</Link></li>
