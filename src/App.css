@@ -351,6 +351,10 @@ footer:not(:first-child){
   font-size: 15px;
   color: var(--color-1c1c1b);;
 }
+.product-card .prod-details h4{
+  font-size: 18px;
+  color: var(--color-1c1c1b);;
+}
 .product-card .price{
   font-size: 16px;
   color: var(--color-1c1c1b);
@@ -801,6 +805,16 @@ color: var(--color-1c1c1b);
 .description-wrapper li{
   color: var(--color-777777);
   font-size: 16px;
+}
+.med-prod .product-heading{
+  font-size: 20px;
+}
+.med-prod .product-link{
+  color: var(--color-777777);
+}
+.no-review-msg{
+  font-size: 15px;
+  color: var(--color-777777);
 }
 .review-head, .review-form, .single-review{
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);

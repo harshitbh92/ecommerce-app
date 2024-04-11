@@ -20,6 +20,7 @@ const Wishlist = () => {
         dispatch(getUserProductWishlist());
     }
     const wishlistState = useSelector((state) => state.auth?.wishlist?.wishlist || []);
+    console.log(wishlistState);
     const removeFromWishlist = (id) =>{
         dispatch(addToWishlist(id));
         toast.info('Product removed from wishlist');

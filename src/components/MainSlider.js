@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -8,11 +8,16 @@ import mainprod3 from "../images/main-prod3.png"
 import mainprod4 from "../images/main-prod4.png"
 import mainprod5 from "../images/main-prod5.png"
 import mainprod6 from "../images/main-prod6.png"
+import { getAProduct } from '../features/products/productSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import {  useLocation } from 'react-router-dom'
 
 const CustomPrevArrow = (props) => {
     const { className, style, onClick } = props;
     return (
-      <div className={className} style={{ ...style, display: 'block', background: 'gray' }} onClick={onClick}>
+      <div className={className} style={{ ...style, display: 'block', background: '#232f3e', // Add padding for better button visibility
+      borderRadius: '10%', // Optionally, make the button rounded
+      cursor: 'pointer' }} onClick={onClick}>
         Previous
       </div>
     );
@@ -21,12 +26,22 @@ const CustomPrevArrow = (props) => {
   const CustomNextArrow = (props) => {
     const { className, style, onClick } = props;
     return (
-      <div className={className} style={{ ...style, display: 'block', background: 'gray' }} onClick={onClick}>
+      <div className={className} style={{ ...style, display: 'block', background: '#232f3e', // Add padding for better button visibility
+      borderRadius: '10%', // Optionally, make the button rounded
+      cursor: 'pointer' }} onClick={onClick}>
         Next
       </div>
     );
   };
 const MainSlider = () => {
+  const location = useLocation();
+    const productId = location.pathname.split('/')[2];
+  const dispatch = useDispatch();
+  useEffect(()=>{
+      dispatch(getAProduct(productId));
+  },[]);
+  const productState = useSelector(state => state?.product?.product);
+  console.log(productState);
   const settings = {
     dots: true,
     infinite: true,
@@ -58,7 +73,7 @@ const MainSlider = () => {
   return (
     <Slider {...settings}>
       <div>
-        <img className='img-fluid mt-4' src={mainprod1} alt="main-prod-1" />
+        <img className='img-fluid mt-4' src={productState?.images} alt="main-prod-1" />
       </div>
       <div>
         <img className='img-fluid' src={mainprod2} alt="main-prod-2" />
