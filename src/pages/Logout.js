@@ -7,7 +7,7 @@ const Logout = () => {
     const handleLogout = () => {
         try {
             window.localStorage.clear();
-            navigate("/"); // Navigate to the root URL
+            navigate("/login"); // Navigate to the root URL
         } catch (error) {
             console.error("Logout failed:", error);
             // Handle error gracefully, maybe show a message to the user

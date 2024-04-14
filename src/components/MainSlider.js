@@ -41,7 +41,7 @@ const MainSlider = () => {
       dispatch(getAProduct(productId));
   },[]);
   const productState = useSelector(state => state?.product?.product);
-  console.log(productState);
+  // console.log(productState);
   const settings = {
     dots: true,
     infinite: true,

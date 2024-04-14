@@ -7,17 +7,32 @@ import img3 from '../images/user.png'
 import img4 from '../images/shopping-cart.png'
 import img5 from '../images/dots-menu.png'
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [authenticated, setauthenticated] = useState(null);
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("authenticated");
     if (isLoggedIn) {
       setauthenticated(isLoggedIn);
     }
-  }, [])
+  }, []);
+  const [total,setTotal] = useState(null);
+  const cartState = useSelector((state)=> state?.auth?.cartProducts);
+  useEffect(()=>{
+    let sum = 0;
+    for (let index = 0; index < cartState?.length; index++) {
+      sum = sum + (Number(cartState[index].quantity)*(cartState[index].price));
+      setTotal(sum);
+    }
+  },[cartState])
   const username = useSelector((state) => state.auth?.user?.firstname);
   console.log(username);
+  const LogoutUser = () =>{
+    window.localStorage.clear();
+  }
   return (
     <>
       <header className='header-top-strip py-2'> {/*py-3 means padding on y-axis top and bottom */}
@@ -77,8 +92,12 @@ const Header = () => {
                   <Link
                     to='/cart'
                     className='d-flex align-items-center text-white gap-10'>
+
                     <img src={img4} alt='cart' style={{ filter: 'brightness(0) invert(1)' }} />
-                    <p className='mb-0'>$400</p>
+                    <div className='d-flex flex-column gap-10'>
+                    <span className='badge bg-white text-dark'>{cartState?.length ? cartState?.length : 0}</span>
+                    <p className='mb-0'>${total ? total : 0}</p>
+                    </div>
                   </Link>
                 </div>
                 {/* <div> */}
@@ -88,7 +107,10 @@ const Header = () => {
                     <Link to='/login' 
                     className='d-flex align-items-center text-white gap-10'>
                     <img src={img3} alt='log in' style={{ filter: 'brightness(0) invert(1)' }} />
+                    <div className='d-flex flex-column gap-10'>
                     <p className='mb-0'>{username}</p>
+                    {/* <Link onClick={LogoutUser()}  className='text-white'>Logout</Link> */}
+                    </div>
                     </Link>
                   </div>:
                   <div>

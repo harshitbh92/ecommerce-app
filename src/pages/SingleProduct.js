@@ -32,10 +32,17 @@ import * as yup from 'yup';
 import { useFormik } from 'formik';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import { addProdToCart, getUserCart } from '../features/user/userSlice';
 
 
 
 const SingleProduct = () => {
+
+    const [color, setcolor] = useState(null);
+    console.log(color);
+    const [quantity, setquantity] = useState(1);
+    // console.log(quantity);
+    const [alreadyAdded, setAlreadyAdded] = useState(false);
 
     const ReviewSchema = yup.object().shape({
         reviewtitle: yup.string().required("First Name is required"),
@@ -63,21 +70,49 @@ const SingleProduct = () => {
         },
     });
     const location = useLocation();
+    // const navigate = useNavigate();
     const productId = location.pathname.split('/')[2];
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getAProduct(productId));
+        dispatch(getUserCart());
     }, []);
+
+    const cartState = useSelector(state => (state?.auth?.cartProducts));
+    useEffect(()=>{
+        for (let index = 0; index < cartState?.length; index++) {
+            if(productId === cartState[index]?.productId?._id)
+            {
+                setAlreadyAdded(true);
+            }
+            
+        }
+    },[])
+    const uploadCart = ()=>{
+        if(color === null)
+        {
+            toast.error("Please choose a color")
+            return false;
+        }
+        else{
+            dispatch(addProdToCart({
+                productId : productState?._id,color,price :productState?.price,quantity    }))
+                navigate('/cart')
+        }
+    }
+
+
     const productState = useSelector(state => state?.product?.product);
+    // console.log(productState?.color);
     const userState = useSelector(state => state?.auth?.user);
-    console.log(productState);
+    // console.log(productState);
     var star_count = productState?.totalrating;
     const { orderedProduct, setOrderedProduct } = useState(false);
     // if useState(false) => user is not logged in and not bought the product so can't write a review
     // if useState(true) => user is logged in and has bought the product so can write a review
     return (
         <>
-            <Breadcrum title='Product Name' />
+            <Breadcrum title={productState?.title} />
             <div className='main-product-wrapper py-5'>
                 <div className='container-xxl'>
                     <div className='row'>
@@ -178,12 +213,17 @@ const SingleProduct = () => {
                                     </div>
 
                                 </div>
-                                <div className='product-details mb-3'>
-                                    <h5>Color:</h5>
-                                    <Color />
-                                </div>
+                                {
+                                    alreadyAdded === false && <>
+                                    <div className='product-details mb-3'>
+                                        <h5>Color:</h5>
+                                        <Color  setcolor={setcolor} colorData ={productState?.color}  />
+                                    </div></>
+                                }
                                 <div className='d-flex align-items-center gap-10'>
-                                    <p className='mb-0'>Quantity : </p>
+                                    {
+                                        alreadyAdded ===false && <>
+                                        <p className='mb-0'>Quantity : </p>
                                     <div>
                                         <input className='form-control'
                                             type='number'
@@ -191,10 +231,13 @@ const SingleProduct = () => {
                                             id=''
                                             min={1}
                                             max={10}
+                                            onChange={(e)=> setquantity(e.target.value)}
+                                            value={quantity}
                                         />
-                                    </div>
-                                    <Link to='/checkout' className='button'>Add to Cart</Link>
-                                    <Link to='/signup' className='button buynow'>Buy Now</Link>
+                                    </div></>
+                                    }
+                                    <button onClick={()=>alreadyAdded? navigate('/cart') :uploadCart()}  className='button'>{alreadyAdded?"Go to Cart" :"Add to Cart"}</button>
+                                    <Link to='/checkout' className='button buynow'>Buy Now</Link>
                                 </div>
                                 <div className='end-prod'>
                                     <div className='d-flex align-items-center justify-content-between mt-3'>
